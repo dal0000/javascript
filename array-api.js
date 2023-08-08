@@ -77,10 +77,24 @@ const students = [
   const average = sum / result.length;
   console.log(average);
 }
-
+{
+  const result = students.reduce((p, c) => {
+    return p + c.score;
+  }, 0);
+  console.log(`score average : ${result / students.length}`);
+}
 //Q10. make a string containing all the scores
 // result should be : '45,80,90,66,88'
 {
   const result = students.map((student) => student.score).join();
+  console.log(result);
+}
+// Bonus! do Q10 sorted ni ascending order
+// result should be : '45,66,80,88,90'
+{
+  const result = students
+    .map((student) => student.score)
+    .sort()
+    .join();
   console.log(result);
 }
